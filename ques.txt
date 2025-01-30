@@ -1,0 +1,3 @@
+valudat & invalidate taags in RTK query,?, what is tags in rtk querry?
+state lifting up
+Controlled & uncontrolled components
