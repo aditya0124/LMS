@@ -1,5 +1,4 @@
 // Server using express
-// const URI = "mongodb+srv://amanaditya763:KSayUyoSGPwYKYgn@cluster0.kalr5.mongodb.net/"
 
 import express from "express"
 import dotenv from "dotenv"
