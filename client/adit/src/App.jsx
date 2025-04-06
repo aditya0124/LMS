@@ -234,7 +234,7 @@ function App() {
   return (
     <main>
       <ThemeProvider>
-      <RouterProvider router={appRouter} />
+       <RouterProvider router={appRouter} />
       </ThemeProvider>
     </main>
   );

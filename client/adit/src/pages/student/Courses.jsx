@@ -3,12 +3,33 @@ import { Skeleton } from "@/components/ui/skeleton";
 import React from "react";
 import Course from "./Course";
 import { useGetAllCourseQuery } from "@/features/api/courseApi";
+import { useSelector } from "react-redux";
  
 const Courses = () => {
   const{data,isError,isLoading,isSuccess}=useGetAllCourseQuery();
   // if(isSuccess){
   //   alert("All OK");
   // }
+
+  // 
+  const { isAuthenticated } = useSelector((state) => state.auth); // Get the auth state from Redux
+
+  // if (!isAuthenticated) {
+  //   return <h1>Please log in to view courses.</h1>;
+  // }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="absolute inset-0 flex justify-center items-center bg-gray-50 dark:bg-[#141414]">
+        <h1 className="text-4xl font-bold text-center text-red-600 dark:text-red-400">
+          Please log in to view courses.
+        </h1>
+      </div>
+    );
+  }
+  
+  
+  // 
   console.log(data);
 //  const isLoading = false;
   if(isError) return <h1>Some error occurred while fetching courses.</h1>
